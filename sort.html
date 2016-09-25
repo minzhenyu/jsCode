@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>算法</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+<script>
+	// 冒泡
+	// 1
+	function bubbleSort(arr){
+		var len = arr.length;
+		for(var i = 0;  i<len; i++){
+			for(var j; j<len-1-i; j++){
+				if(arr[j]>arr[i+1]){
+					var temp = arr[j+1];
+					arr[j+1] = arr[j];
+					arr[j] = temp;
+				}
+			}
+		}
+		return arr;
+	}
+	// 2 标记变量 改进
+	function bubbleSort2(arr){
+		var i = arr.length-1;
+		while(i>0){
+			var pos = 0;
+			for(var j = 0; j<i; j++){
+				if(arr[j]<arr[j+1]){
+					pos = j;
+					var temp = arr[j];
+					arr[j]=arr[j+1];
+					arr[j+1]=temp;
+				}
+				i=pos;
+			}
+			return arr;
+		}
+	}
+
+	// 3 正反向排序 改进
+	 function bubbleSort3(arr){
+	 	var low = 0;
+	 	var high = arr.length-1;
+	 	var temp,j;
+	 	while(low<high){
+	 		// 正向
+	 		for(j=low;j<high;++j){
+	 			if(arr[j]>arr[j+1]){
+		 			temp = arr[j];
+		 			arr[j]=arr[j+1];
+		 			arr[j+1]=temp;
+	 			}
+	 		}
+	 		--high;
+	 		// 反向
+	 		for(j=high;j>low;--j){
+	 			if(arr[j]<arr[j-1]){
+	 				temp=arr[j];
+	 				arr[j]=arr[j-1];
+	 				arr[j-1]=temp;
+	 			}
+	 		}
+	 		++low;
+	 	}
+	 	return arr;
+	 }
+
+	 // 选择排序 找到最小的index
+	 function selectionSort(arr){
+	 	var len = arr.length;
+	 	var minIndex,temp;
+	 	for(var i=0;i<len-1;i++){
+	 		minIndex =i;
+	 		for(var j=i+1;j<len;j++){
+	 			if(arr[j]<arr[minIndex]){
+	 				minIndex = j;
+	 			}
+	 		}
+	 		temp = arr[i];
+	 		arr[i]=arr[minIndex];
+	 		arr[minIndex] =temp;
+	 	}
+	 	return arr;
+	 }
+
+
+
+	 //  插入算法
+	 function insertSort(arr){
+	 	if (Object.prototype.toString.call(arr).slice(8,-1)==='Array') {
+	 		
+	 	}
+	 }
+</script>
+</head>
+<body>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
