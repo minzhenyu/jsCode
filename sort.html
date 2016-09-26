@@ -90,11 +90,23 @@
 
 
 	 //  插入算法
+	 // 1
 	 function insertSort(arr){
 	 	if (Object.prototype.toString.call(arr).slice(8,-1)==='Array') {
-	 		
+	 		for(var i=1;i<arr.length; i++){
+	 			var j = i-1;
+	 			while(j>0&& arr[j]>key){
+	 				arr[j+1]=arr[j];
+	 				j--;
+	 			}
+	 			arr[j+1]=key;
+	 		}
+	 		return arr;
+	 	}else{
+	 		return 'arr is not an Array';
 	 	}
 	 }
+
 </script>
 </head>
 <body>
